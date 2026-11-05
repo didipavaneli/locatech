@@ -1,5 +1,6 @@
 package br.com.fiap.locatech.locatech.controllers;
 
+import br.com.fiap.locatech.locatech.dtos.AluguelRequestDTO;
 import br.com.fiap.locatech.locatech.entities.Aluguel;
 import br.com.fiap.locatech.locatech.services.AluguelService;
 import br.com.fiap.locatech.locatech.services.AluguelService;
@@ -47,10 +48,10 @@ public class AluguelController {
 
     @PostMapping
     public ResponseEntity<Void> saveAluguel(
-            @RequestBody Aluguel aluguel
+            @RequestBody AluguelRequestDTO aluguelRequestDTO
     ){
         logger.info("POST -> /alugueis");
-        this.aluguelService.saveAluguel(aluguel);
+        this.aluguelService.saveAluguel(aluguelRequestDTO);
         return ResponseEntity.status(201).build();
     }
 
