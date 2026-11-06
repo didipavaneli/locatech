@@ -1,11 +1,13 @@
 package br.com.fiap.locatech.locatech.dtos;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
 public record AluguelRequestDTO(
-       @NotNull(message = "O id da pessoa não pode ser nulo")
+        @Schema(description = "Id da pessoa que está alugando o veiculo")
+        @NotNull(message = "O id da pessoa não pode ser nulo")
         Long pessoaId,
        @NotNull(message = "O id do veiculo não pode ser nulo")
         Long veiculoId,
